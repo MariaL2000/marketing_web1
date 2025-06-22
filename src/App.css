@@ -1,0 +1,416 @@
+/* General Styles */
+body {
+  font-family: 'Inter', sans-serif;
+  padding-top: 76px; /* For fixed navbar */
+  overflow-x: hidden;
+}
+
+/* Header Carousel */
+.header-carousel {
+  margin-top: -76px; /* To offset the navbar padding */
+}
+
+.header-carousel .carousel-item {
+  height: 80vh;
+  min-height: 500px;
+  background-position: center;
+  background-size: cover;
+}
+
+.header-carousel .carousel-item img {
+  object-fit: cover;
+  height: 80vh;
+  min-height: 500px;
+  width: 100%;
+}
+
+.header-carousel .carousel-caption {
+  bottom: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: 700px;
+  left: 10%;
+  right: auto;
+  text-align: left;
+  padding: 0;
+}
+
+/* Cookie Consent Banner */
+.cookie-consent-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(33, 37, 41, 0.95);
+  color: white;
+  z-index: 1050;
+}
+
+.cookie-consent-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.cookie-consent-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.cookie-consent-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Animation enhancements */
+[data-aos] {
+  pointer-events: none;
+}
+
+[data-aos].aos-animate {
+  pointer-events: auto;
+}
+
+/* Responsive adjustments */
+/* Mobile devices */
+@media (max-width: 576px) {
+  .header-carousel .carousel-caption {
+    left: 5%;
+    right: 5%;
+    max-width: 90%;
+  }
+  
+  .header-carousel .carousel-caption h1 {
+    font-size: 2rem;
+  }
+  
+  .header-carousel .carousel-caption p {
+    font-size: 1rem;
+  }
+  
+  .cookie-consent-content {
+    text-align: center;
+  }
+  
+  .cookie-consent-buttons {
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .cookie-consent-buttons button {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Tablets */
+@media (min-width: 577px) and (max-width: 768px) {
+  .header-carousel .carousel-caption {
+    left: 5%;
+    right: 5%;
+    max-width: 90%;
+  }
+  
+  .cookie-consent-content {
+    text-align: center;
+  }
+  
+  .cookie-consent-buttons {
+    justify-content: center;
+  }
+}
+
+/* Laptops and small desktops */
+@media (min-width: 769px) and (max-width: 1200px) {
+  .header-carousel .carousel-caption {
+    max-width: 600px;
+  }
+}
+
+/* Large desktops and high-resolution displays (like Mac 5K) */
+@media (min-width: 1201px) {
+  .container {
+    max-width: 1400px;
+  }
+  
+  .header-carousel .carousel-item {
+    height: 85vh;
+  }
+  
+  .header-carousel .carousel-item img {
+    height: 85vh;
+  }
+  
+  .header-carousel .carousel-caption {
+    max-width: 800px;
+  }
+  
+  .header-carousel .carousel-caption h1 {
+    font-size: 3.5rem;
+  }
+  
+  .header-carousel .carousel-caption p {
+    font-size: 1.5rem;
+  }
+}
+
+/* Ultra-wide and 4K+ displays */
+@media (min-width: 2560px) {
+  .container {
+    max-width: 1800px;
+  }
+  
+  body {
+    font-size: 18px;
+  }
+  
+  .header-carousel .carousel-caption {
+    max-width: 1000px;
+  }
+  
+  .header-carousel .carousel-caption h1 {
+    font-size: 4rem;
+  }
+}
+
+/* Fix for iOS Safari viewport height issue */
+@supports (-webkit-touch-callout: none) {
+  .header-carousel .carousel-item,
+  .header-carousel .carousel-item img {
+    height: 70vh; /* Slightly reduced height for iOS */
+  }
+}
+
+/* Additional responsive utilities */
+.text-responsive {
+  font-size: calc(100% + 0.3vw);
+}
+
+/* Ensure images are responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Improve button responsiveness on touch devices */
+button, 
+.btn {
+  touch-action: manipulation;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Add these styles to your existing CSS */
+
+/* Coupon Card Styles */
+.coupon-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.coupon-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+.coupon-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: var(--bs-primary);
+  color: white;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 15% 50%);
+  min-width: 80px;
+  text-align: center;
+}
+
+.coupon-code {
+  background-color: rgba(0, 0, 0, 0.05);
+  border: 1px dashed #ccc;
+  font-family: monospace;
+  letter-spacing: 1px;
+}
+
+.coupon-code-large {
+  background-color: rgba(0, 0, 0, 0.05);
+  border: 2px dashed #ccc;
+  font-family: monospace;
+  letter-spacing: 2px;
+}
+/* Add these styles to your existing CSS */
+
+/* Offers Carousel Animation */
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  10%, 90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+
+
+/* Make offers text responsive */
+.offers-text {
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .offers-text {
+    font-size: 0.85rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Navbar wrapper to handle fixed positioning */
+.navbar-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030;
+}
+/* Update these styles in your existing CSS */
+
+/* Offers ticker styling */
+.offers-ticker-container {
+  background-color: var(--bs-primary);
+  color: white;
+  width: 100%;
+  overflow: hidden;
+  padding: 8px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.offers-ticker-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Changed to space-between for even distribution */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.offers-ticker-content {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  height: 24px;
+  margin: 0 15px; /* Add margin on both sides */
+}
+
+.ticker-item {
+  position: absolute;
+  white-space: nowrap;
+  font-weight: 500;
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: transform 1s ease, opacity 0.5s ease;
+}
+
+.ticker-item.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.ticker-button, .ticker-phone-button {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.ticker-phone-button {
+  border-color: rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
+}
+
+.ticker-phone-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .ticker-item {
+    font-size: 0.85rem;
+  }
+  
+  .offers-ticker-wrapper {
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px 15px;
+  }
+  
+  .ticker-button, .ticker-phone-button {
+    margin: 4px 0;
+    width: 100%;
+    font-size: 0.75rem;
+  }
+  
+  .offers-ticker-content {
+    margin: 8px 0;
+    order: -1; /* Move ticker content to the top on mobile */
+  }
+  
+  main {
+    padding-top: 160px; /* More space for stacked elements on mobile */
+  }
+}
+
+/* For medium screens, keep horizontal but adjust spacing */
+@media (min-width: 768px) and (max-width: 991px) {
+  .offers-ticker-wrapper {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .offers-ticker-content {
+    order: 0;
+    width: 100%;
+    margin-bottom: 8px;
+  }
+  
+  .ticker-button, .ticker-phone-button {
+    width: auto;
+    margin: 0 8px;
+  }
+}
