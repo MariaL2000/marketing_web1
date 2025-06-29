@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom'; // Eliminamos BrowserRouter import
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container } from 'react-bootstrap';
@@ -35,25 +35,27 @@ function App() {
   };
 
   return (
-    <> {/* Reemplazamos Router con un Fragment */}
-      <NavigationBar />
-      
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/coupons" element={<Coupons />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </main>
+    <HashRouter>
+      <div className="App">
+        <NavigationBar />
+        
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/coupons" element={<Coupons />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </main>
 
-      <Footer />
-      
-      {!cookiesAccepted && (
-        <CookieConsent onConsent={handleCookieConsent} />
-      )}
-    </>
+        <Footer />
+        
+        {!cookiesAccepted && (
+          <CookieConsent onConsent={handleCookieConsent} />
+        )}
+      </div>
+    </HashRouter>
   );
 }
 
