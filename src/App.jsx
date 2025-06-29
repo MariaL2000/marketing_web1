@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom'; // Eliminamos BrowserRouter import
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container } from 'react-bootstrap';
@@ -35,7 +35,7 @@ function App() {
   };
 
   return (
-    <Router>
+    <> {/* Reemplazamos Router con un Fragment */}
       <NavigationBar />
       
       <main>
@@ -47,13 +47,13 @@ function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
-      
+
       <Footer />
       
       {!cookiesAccepted && (
         <CookieConsent onConsent={handleCookieConsent} />
       )}
-    </Router>
+    </>
   );
 }
 
